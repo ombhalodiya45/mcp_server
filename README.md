@@ -3,22 +3,23 @@
 The backend is built using Node.js and handles core server functionalities along with custom MCP (Model Context Protocol) endpoints.
 It is organized to keep configuration, logic, and documentation clean and modular.
 
-backend/
-│── node_modules/        # Installed dependencies (ignored in Git)
-│── .env                 # Environment variables (ignored)
-│── .gitignore           # Git ignore rules
-│── index.js             # Main backend entry point
-│── mcp-http-wrapper.mjs # MCP HTTP wrapper logic
-│── mcp-server.mjs       # MCP server implementation
-│── tools.js             # Utility and tool functions
-│── test-key.js          # Testing key or logic
-│── package.json         # Project metadata & scripts
-│── package-lock.json    # Dependency lock file
+| File / Folder          | Description                             |
+| ---------------------- | --------------------------------------- |
+| `node_modules/`        | Installed dependencies (ignored in Git) |
+| `.env`                 | Environment variables (ignored)         |
+| `.gitignore`           | Git ignore rules                        |
+| `index.js`             | Main backend entry point                |
+| `mcp-http-wrapper.mjs` | MCP HTTP wrapper logic                  |
+| `mcp-server.mjs`       | MCP server implementation               |
+| `tools.js`             | Utility and tool functions              |
+| `test-key.js`          | Testing key or logic                    |
+| `package.json`         | Project metadata & scripts              |
+| `package-lock.json`    | Dependency lock file                    |
+
 
 ⚙️ Requirements
 
 Node.js (v18+ recommended)
-
 npm or yarn
 
 📦 Installation
@@ -35,10 +36,10 @@ node mcp-server.mjs
 🔐 Environment Variables
 Create a .env file inside the backend folder.
 
-GROQ_API_KEY=<your groq api key>
-WEATHER_API_KEY=<your weather api key>
-PORT=<port number>
-EXCHANGE_API_KEY=<your exchange api key>
+GROQ_API_KEY=api_key
+WEATHER_API_KEY=api_key
+PORT=port_number
+EXCHANGE_API_KEY=api_key
 
 🛠️ Scripts
 Useful scripts (if defined in package.json):
@@ -53,11 +54,8 @@ node test-key.js
 📜 .gitignore
 
 The project includes a .gitignore with rules to keep the repository clean:
-
 Ignore environment files
-
 Ignore node_modules/
-
 Ignore system/editor files
 
 📄 License
