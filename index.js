@@ -2,12 +2,24 @@ import express from "express";
 import dotenv from "dotenv";
 import Groq from "groq-sdk";
 import axios from "axios";
+import { spawn } from "child_process";
 
 dotenv.config();
 const app = express();
 app.use(express.json());
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+
+// Start MCP wrapper automatically
+const mcpWrapper = spawn("node", ["mcp-http-wrapper.mjs"]);
+
+mcpWrapper.stdout.on("data", data => {
+  console.log("MCP WRAPPER:", data.toString());
+});
+
+mcpWrapper.stderr.on("data", data => {
+  console.log("MCP WRAPPER ERROR:", data.toString());
+});
 
 // Tools metadata for LLM prompt
 const tools = [
